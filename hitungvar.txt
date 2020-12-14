@@ -1,0 +1,12 @@
+Misalnya saya memproduksi Baskom 1 DOS isi 12 LSN yang terdiri dari 3 material 
+Material harus memakai satuan kecil
+
+1 LSN membutuhkan
+Rincian material :
+
+1. Cat = 12 pcs
+2. Lem = 12 pcs
+3. Tepung = 12 pcs 
+
+Berarti 12 * 12 = 144 pcs masing2 material
+

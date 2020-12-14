@@ -1,0 +1,107 @@
+e7ac4ecd049d45bef62867a234
+10 KRG Input
+
+Di konversi satuan kecil LSN
+
+1 KRG = 10 LSN
+
+10 KRG * 10 LSN = 100 LSN
+
+--------------
+
+S01 : PCS	-
+S02 : BAL	-
+S03 : LSN	-
+S04 : DOS	-
+S05 : SAK	-
+S06 : KG	 -
+S07 : SET	-
+S08 : GRS	-
+S09 : KRG -
+S10 : IKT -
+S11 : ROL -
+S12 : PAK -
+
+diskon = (qty*harga)*diskon/100
+subtotal = (qty*harga) - diskon + ()
+
+---------------
+
+inventori = satuan_beli / satuan_jual
+so = satuan_simpan / satuan_jual
+
+---------------
+Kartu Stok 
+
+Tabel Kartu Stok = SM, SK, SJ, BTB
+Satuan Ikat hanya di kode SJ
+
+table_inventori 
+
+satuan_simpan = satuan_kecil
+satuan_jual = satuan_besar
+isi = @
+
+table_so_dtl 
+
+satuan = satuan_ikat
+konversi1 = @
+
+---------------
+
+OP -> PP (dashboard) -> BTB -> FB -> BKK
+								|
+		                       GK -> PG
+
+---------------
+
+SO -> SJ -> FJ  -> BKM
+			 |
+		    GM -> PG
+
+Contoh CSV di view packing list
+
+Export CSV
+
+Order Pembelian, Sales Order, Order Pembelian Aset
+
+---------------
+
+TOP = Term of Payment
+
+1. Stok order pembelian ambil berdasarkan barang dan gudang di crd_stok
+2. Satuan order pembelian ambil yang terkecil (satuan_beli)
+3. Status approval pembelian lanjut ke permintaan pembelian untuk di setujui atau di tolak
+
+
+---------------
+
+Giro Keluar jika di batalkan statusnya di gk_hdr, gk_dtl
+
+kode GK menjadi GKB di gk_hdr_history, gk_dtl_history
+
+---------------
+
+BTB simpan di tabel btb_hdr, btb_dtl, crd_stok, crd_stok_dtl, jurnal
+
+FB simpan di tabel fb_hdr, fb_dtl, jurnal, kartu_hutang
+
+---------------
+
+SJ simpan di tabel sj_hdr, sj_dtl, crd_stok, crd_stok_dtl, jurnal
+
+Tanggal JT adalah tanggal dari TOP (Term of Payment)
+
+!!! Surat Jalan jika tidak ada satuan ikat sisa barang tidak muncul !!! Belum
+
+---------------
+
+FJ simpan di table fj_hdr, fj_dtl, jurnal, kartu_piutang
+
+---------------
+
+Master Aset
+
+kode_aset, nama_aset, nama_supplier, kategori_aset, lokasi_aset, tipe_pembayaran (cash / kredit), nama_leasing, masa_leasing, bunga_leasing, status
+
+Kalau cash kolom leasing kosong, kalau kredit wajib isi leasing

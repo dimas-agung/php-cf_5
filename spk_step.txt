@@ -1,0 +1,6 @@
+?page=produksi/spk
+?page=logistik/permintaan_material&action=spk_to_pm
+?page=logistik/transfer_gudang&action=pm_to_tg
+?page=produksi/barang_jadi&action=spk_to_bj
+?page=logistik/transfer_gudang&action=retur_bhn_baku
+?page=logistik/stok_keluar&action=bs_bhn_baku
